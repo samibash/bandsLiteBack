@@ -34,3 +34,7 @@ Artist.all.each do |artist|
   end
 
 end
+
+User.create(name: "Olaf")
+
+UserEvent.create(user_id: User.all.sample.id, event_id: Event.all.sample.id)
