@@ -1,5 +1,5 @@
 class Api::V1::ArtistsController < ApplicationController
-  before_action :find_artist, only: [:update, :fetch]
+  before_action :find_artist, only: [:update, :show, :destroy]
   def index
     @artists = Artist.all
     render json: @artists
@@ -7,10 +7,15 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id])
     render json: @artist
+  end
 
+  def create
+    @artist = Artist.create(artist_params)
+  end
 
+  def destroy
+    @artist.delete
   end
 
   def update
@@ -43,6 +48,6 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.permit(:name,:id)
+    params.permit(:name,:id, :bio)
   end
 end

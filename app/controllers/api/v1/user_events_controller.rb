@@ -1,5 +1,5 @@
 class Api::V1::UserEventsController < ApplicationController
-    before_action :find_user_event, only: [:update, :destroy]
+    before_action :find_user_event, only: [:update,  :destroy]
   def index
     @user_events = UserEvent.all
     render json: @user_events
