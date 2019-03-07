@@ -1,4 +1,7 @@
+
+
 class Api::V1::ArtistsController < ApplicationController
+  
   before_action :find_artist, only: [:update, :show, :destroy]
   def index
     @artists = Artist.all
@@ -11,8 +14,12 @@ class Api::V1::ArtistsController < ApplicationController
   end
 
   def create
+   
     @artist = Artist.create(artist_params)
-  end
+   @artist.getEvents
+end
+    
+
 
   def destroy
     @artist.delete
@@ -31,15 +38,6 @@ class Api::V1::ArtistsController < ApplicationController
 
 
 
-  def create
-    @artist = Artist.create(artist_params)
-
-
-  end
-
-
-
-
 
   private
 
@@ -50,4 +48,6 @@ class Api::V1::ArtistsController < ApplicationController
   def artist_params
     params.permit(:name,:id, :bio)
   end
+
+
 end

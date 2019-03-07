@@ -10,6 +10,7 @@ Artist.create(name: "Louis Cole")
 Artist.create(name: "Knower")
 Artist.create(name: "Ravi Coltrane")
 Artist.create(name: "Little Feat")
+Artist.create(name: "Randy Brecker")
 
 
 5.times do
