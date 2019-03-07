@@ -12,7 +12,7 @@ class Artist < ApplicationRecord
 
       response.each do |r|
 
-      Event.create(venue_name: r["venue"]["name"]  ,country: r["venue"]["country"] ,latitude: r["venue"]["latitude"], longitude: r["venue"]["longitude"], ticket_link: r["offers"][0]["url"], status: r["offers"][0]["status"], bands_in_town_link: r["url"], api_artist_id: r["id"],  artist_id: self.id)
+      Event.create(venue_name: r["venue"]["name"]  ,country: r["venue"]["country"] ,latitude: r["venue"]["latitude"], longitude: r["venue"]["longitude"], ticket_link: r["offers"][0]["url"], status: r["offers"][0]["status"], bands_in_town_link: r["url"], api_artist_id: r["id"],  artist_id: self.id, date_time: r["datetime"])
 
       end
 
