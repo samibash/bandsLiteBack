@@ -35,10 +35,6 @@ end
   end
 
 
-
-
-
-
   private
 
   def find_artist
@@ -46,7 +42,7 @@ end
   end
 
   def artist_params
-    params.permit(:name,:id, :bio)
+    params.permit(:name, :id, :bio)
   end
 
 
