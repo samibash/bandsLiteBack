@@ -17,6 +17,7 @@ class Api::V1::ArtistsController < ApplicationController
    
     @artist = Artist.create(artist_params)
    @artist.getEvents
+   @artist.getDetails
 end
     
 
